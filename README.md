@@ -14,6 +14,14 @@ For each Python version, this repository includes the following.
 
 These installers were built from the source distributions published at https://www.python.org/downloads/source/, patched to fix some bugs in the build scripts and to include debugging symbols and debug binaries. For the more technical among you, see [Notes.md](Notes.md) for further information about how I built the installers and how you may build them yourself.
 
+## NuGet Packages
+
+To install a `.nupkg` package, ensure that you have the [NuGet Command-Line Interface](https://learn.microsoft.com/en-us/nuget/reference/nuget-exe-cli-reference?tabs=windows) installed. Go to the directory containing the `.nupkg` file in Command Prompt. Replace `target\installation\directory` in the following commands with the desired location to install the package.
+
+For 64-bit Python, run `nuget install python -Source %cd% -OuputDirectory target\installation\directory`
+
+For 32-bit Python, run `nuget install pythonx86 -Source %cd% -OuputDirectory target\installation\directory`
+
 ## Git History
 
 In an effort to keep the size of this repository low, the Git history will not be kept. All updates will be made via force-pushes. If you fork this repository and wish to update your fork, see https://stackoverflow.com/questions/9646167/clean-up-a-fork-and-restart-it-from-the-upstream.
