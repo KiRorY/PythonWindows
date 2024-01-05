@@ -1,6 +1,6 @@
 # Unofficial Python Installers for Windows
 
-For older Python versions in the *security* maintenance status, https://www.python.org/ officially releases only the source code and no installers. But what if you want an easy way to install these versions on Windows? Here, you can obtain unofficial Windows installers for security updates of Python 3.5 through 3.10.
+For older Python versions in the *security* maintenance status, https://www.python.org/ officially releases only the source code and no installers. But what if you want an easy way to install these versions on Windows? Here, you can obtain unofficial Windows installers for security updates of Python 3.5 and higher.
 
 For each Python version, this repository includes the following.
 
@@ -16,11 +16,17 @@ These installers were built from the source distributions published at https://w
 
 ## NuGet Packages
 
-To install a `.nupkg` package, ensure that you have the [NuGet Command-Line Interface](https://learn.microsoft.com/en-us/nuget/reference/nuget-exe-cli-reference?tabs=windows) installed. Go to the directory containing the `.nupkg` file in Command Prompt. Replace `target\installation\directory` in the following commands with the desired location to install the package.
+To install a `.nupkg` package, ensure that you have the [NuGet Command-Line Interface](https://learn.microsoft.com/en-us/nuget/reference/nuget-exe-cli-reference?tabs=windows) installed. Go to the directory containing the `.nupkg` file. Replace `target\installation\directory` in the following commands with the desired location to install the package.
 
-For 64-bit Python, run `nuget install python -Source %cd% -OuputDirectory target\installation\directory`
+### Command Prompt
+For 64-bit Python, run `nuget install python -Source %cd% -OutputDirectory target\installation\directory`
 
-For 32-bit Python, run `nuget install pythonx86 -Source %cd% -OuputDirectory target\installation\directory`
+For 32-bit Python, run `nuget install pythonx86 -Source %cd% -OutputDirectory target\installation\directory`
+
+### PowerShell
+For 64-bit Python, run `nuget install python -Source $(Get-Location) -OutputDirectory target\installation\directory`
+
+For 32-bit Python, run `nuget install pythonx86 -Source $(Get-Location) -OutputDirectory target\installation\directory`
 
 ## Git History
 
